@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+const [count, setRandomCount] =
+	useState(function generateRandomInteger() {
+	return Math.floor(Math.random() * 100);
+});
+function clickHandler(e) {
+	setRandomCount(Math.floor(Math.random() * 100));
+}
+return (
+	<div style={{margin: 'auto', width: 100, display: 'block'}}>
+	<h1> {count} </h1>
+	
+	
+<p>
+		<button onClick={clickHandler}> Click </button>
+	</p>
+
+
+	</div>
+);
 }
 
-export default App;
+export default App
